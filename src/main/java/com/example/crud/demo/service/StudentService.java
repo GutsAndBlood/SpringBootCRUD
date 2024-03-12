@@ -48,6 +48,13 @@ public class StudentService {
             throw new StudentNotFoundException("This Email is already in use");
         }
 
+        Optional<Student> studentIdOptional = studentRepo.findStudentByID(student.getId());
+        if(studentIdOptional.isPresent()){
+            throw new StudentNotFoundException("This ID is already in use");
+        }
+
+
+
         studentRepo.save(student);
     }
 

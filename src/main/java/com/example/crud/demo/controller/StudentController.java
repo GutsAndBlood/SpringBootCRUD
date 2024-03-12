@@ -35,7 +35,6 @@ public class StudentController {
 
     @PostMapping
     public void registerStudent(@RequestBody Student student) {
-        System.out.println(student);
         studentService.addNewStudent(student);
     }
 
